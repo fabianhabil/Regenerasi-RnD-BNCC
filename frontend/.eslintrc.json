@@ -1,3 +1,72 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+      "commonjs": true,
+      "es2021": true,
+      "node": true
+  },
+  "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "next/core-web-vitals"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+      "ecmaVersion": "latest"
+  },
+  "plugins": [
+      "@typescript-eslint"
+  ],
+  "rules": {
+      "@typescript-eslint/no-namespace": "off",
+      "@typescript-eslint/no-empty-function": "warn",
+      "@typescript-eslint/no-var-requires": "warn",
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/prefer-for-of": "warn",
+
+      "arrow-parens": "error",
+      "brace-style": "error",
+      "block-spacing": "error",
+      "curly": "error",
+      "eqeqeq": "error",
+
+      "no-var": "error",
+      "no-empty": "warn",
+      "no-unused-vars": "warn",
+      "no-array-constructor": "error",
+      "no-constructor-return": "error",
+      "no-unreachable-loop": "error",
+      "no-self-compare": "warn",
+      "no-template-curly-in-string": "warn",
+      "no-new-object": "error",
+      "no-new-wrappers": "error",
+      "no-labels": "error",
+      "no-label-var": "error",
+
+      // securities
+      "no-eval": "error",
+      "no-implied-eval": "error",
+      "no-new-func": "error",
+
+      "prefer-const": "warn",
+      "prefer-exponentiation-operator": "error",
+
+      "keyword-spacing": "error",
+      "semi": "error",
+      "yoda": "warn",
+
+      "indent": ["error"],
+      "comma-style": ["error", "last"],
+      "jsx-quotes": ["error", "prefer-single"],
+      "quotes": ["error", "single"],
+      "linebreak-style": ["error", "unix"],
+      "max-len": [
+          "error",
+          {
+              "ignoreUrls": true,
+              "ignoreStrings": true,
+              "ignoreTemplateLiterals": true
+          }
+      ]
+  }
 }

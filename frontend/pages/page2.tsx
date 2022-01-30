@@ -3,13 +3,13 @@ import Image from "next/image";
 import { Typography } from "@mui/material";
 import Link from "next/link";
 
-const Home = () => {
+const page2 = () => {
   return (
     <>
       <Typography>First Commit</Typography>
-      <Link href="/page2">page 2</Link>
+      <Link href="/">home</Link>
     </>
   );
 };
 
-export default Home;
+export default page2;

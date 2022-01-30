@@ -15,7 +15,7 @@ const LoadingComponent = () => {
           justifyContent="center"
           sx={{ minHeight: "50%" }}
         >
-          <img src="/loading.svg" />
+          <img src="loading.svg" />
         </Grid>
       </Paper>
     </>

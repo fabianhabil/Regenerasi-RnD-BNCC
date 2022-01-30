@@ -6,9 +6,6 @@ import Head from "next/head";
 function Loading() {
   return (
     <>
-      <Head>
-        <title>Misch PTE Scholarship</title>
-      </Head>
       <LoadingComponent />
     </>
   );
