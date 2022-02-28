@@ -2,22 +2,22 @@ import React, { useState } from "react";
 import { Hidden, Grid } from "@mui/material";
 import Head from "next/head";
 import Layout from "../Layout/Layout";
+import { useStyles } from "../Layout/LayoutStyles";
 function Loading() {
+	const styles = useStyles();
 	return (
 		<>
 			<Head>
-				<title>Regenerasi RnD BNCC</title>
+				<title>Blogskuy</title>
 			</Head>
 			<Grid
 				container
 				direction="column"
 				alignItems="center"
 				justifyContent="center"
-				sx={{ px: 10, py: 3 }}
+				className={styles.appbar}
 			>
-				<Grid item>
-					<img src="/loading.svg" style={{ width: 300, height: 300 }} />
-				</Grid>
+				<img src="/loading.svg" style={{ width: 300, height: 300 }} />
 			</Grid>
 		</>
 	);

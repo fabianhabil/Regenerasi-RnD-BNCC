@@ -2,39 +2,42 @@ import { makeStyles } from "@mui/styles";
 import theme from "../../src/theme";
 
 const useStyles = makeStyles((theme: any) => ({
-	appbar: {
+	body: {
 		paddingRight: "96px",
 		paddingLeft: "96px",
 		paddingTop: "40px",
 		paddingBottom: "40px",
-		backgroundColor: "white",
 		[theme.breakpoints.down("md")]: {
 			paddingRight: "16px",
 			paddingLeft: "16px",
-			paddingTop: "24px",
-			paddingBottom: "24px",
+			paddingTop: "8px",
+			paddingBottom: "8px",
 		},
 	},
-	blogskuy: {
-		cursor: "pointer",
-		color: "#000000",
-		fontSize: "32px",
-	},
-	blog: {
-		cursor: "pointer",
-		color: "#C4C4C4",
-		fontSize: "18px",
+	judul: {
+		fontWeight: 400,
+		lineHeight: "145px",
+		fontSize: "120px",
 	},
 	button: {
-		backgroundColor: "#FFB800",
+		backgroundColor: "black",
 		textTransform: "none",
-		width: "100px",
+		color: "white",
+		width: "250px",
 		height: "40px",
-		boxSizing: "border-box",
-		borderRadius: "10px",
+		fontWeight: "700",
 		"&:hover": {
-			backgroundColor: "#FFD466",
+			color: "white",
+			backgroundColor: "#4d4d4d",
 		},
+	},
+	post: {
+		backgroundColor: "#C4C4C4",
+		padding: "32px",
+		width: "100%",
+		height: "100%",
+		wordBreak: "break-all",
+		wordWrap: "break-word",
 	},
 }));
 
