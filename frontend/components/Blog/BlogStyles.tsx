@@ -34,9 +34,8 @@ const useStyles = makeStyles((theme: any) => ({
 	post: {
 		backgroundColor: "#C4C4C4",
 		padding: "32px",
-		width: "100%",
-		height: "100%",
-		wordBreak: "break-all",
+		minWidth: "100%",
+		minHeight: "100%",
 		wordWrap: "break-word",
 	},
 }));

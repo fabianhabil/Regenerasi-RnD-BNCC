@@ -4,6 +4,7 @@ import { useStyles } from "./BlogStyles";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import data from "./SampleData";
 import React from "react";
+import Link from "next/link";
 
 const Blog = () => {
 	const styles = useStyles();
@@ -19,7 +20,9 @@ const Blog = () => {
 				>
 					<Grid item md={12} xs={12}>
 						<Grid container alignItems="center" justifyContent="center">
-							<Button className={styles.button}>Create My Own Blog</Button>
+							<Link href="/blog/new">
+								<Button className={styles.button}>Create My Own Blog</Button>
+							</Link>
 						</Grid>
 					</Grid>
 					<Grid item md={12} xs={12}>
@@ -47,6 +50,7 @@ const Blog = () => {
 														direction="row"
 														alignItems="center"
 														spacing={2}
+														sx={{ height: "100%" }}
 													>
 														<Grid item>
 															<AccountCircleIcon
@@ -80,7 +84,11 @@ const Blog = () => {
 														container
 														alignItems="center"
 														justifyContent="center"
-														sx={{ marginTop: 4, height: "100%" }}
+														sx={{
+															marginTop: 4,
+															minHeight: "100%",
+															width: "100%",
+														}}
 													>
 														<Typography
 															sx={{

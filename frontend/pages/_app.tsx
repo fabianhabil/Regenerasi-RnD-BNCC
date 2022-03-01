@@ -27,11 +27,13 @@ const MyApp = ({ Component, pageProps }: Props) => {
 	});
 	return getLayout(
 		<>
+			<CssBaseline />
 			{loading ? (
-				<Loading />
+				<>
+					<Loading />
+				</>
 			) : (
 				<>
-					<CssBaseline />
 					<Component {...pageProps} />
 				</>
 			)}

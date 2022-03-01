@@ -14,7 +14,7 @@ const Layout = ({ children }: any) => {
 			</Head>
 			<ThemeProvider theme={theme}>
 				<Bar />
-				{children	}
+				{children}
 			</ThemeProvider>
 		</>
 	);
