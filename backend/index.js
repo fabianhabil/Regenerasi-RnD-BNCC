@@ -3,6 +3,8 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import { db } from "./config/index.js";
+import Router from "./routes/index.js";
+import moment from "moment";
 
 // Express, cors, express json.
 const app = express();
@@ -19,6 +21,8 @@ try {
 }
 
 // Router
-// app.use(Router);
+app.use(Router);
 
-app.listen(5000, () => console.log("Server running at http://localhost:5000"));
+app.listen(5000, () => {
+	console.log("Server running at http://localhost:5000");
+});

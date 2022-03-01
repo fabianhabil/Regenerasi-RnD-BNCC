@@ -3,11 +3,37 @@ import theme from "../../src/theme";
 import { useStyles } from "./BlogStyles";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import data from "./SampleData";
-import React from "react";
+import axios from "axios";
 import Link from "next/link";
+import React, { useState, useEffect } from "react";
 
 const Blog = () => {
 	const styles = useStyles();
+	const [blogs, setBlogs] = useState<any[]>([]);
+
+	const getBlog = async () => {
+		await axios
+			.get("http://localhost:5000/blogs")
+			.then((res) => {
+				console.log(res.data);
+				setBlogs(res.data);
+			})
+			.catch((err) => {});
+	};
+	useEffect(() => {
+		getBlog();
+		if (blogs) {
+			console.log(blogs);
+		}
+	}, []);
+
+	const numDaysBetween = function (d1: any) {
+		var hariini = new Date().getTime();
+		var today = hariini / 1000;
+		var diff = Math.abs(d1 - today);
+		return Math.trunc(diff / (60 * 60 * 24));
+	};
+
 	return (
 		<>
 			<ThemeProvider theme={theme}>
@@ -33,7 +59,7 @@ const Blog = () => {
 							alignItems="stretch"
 							spacing={2}
 						>
-							{data.map((article, index): any => {
+							{blogs.map((article, index): any => {
 								return (
 									<React.Fragment key={index}>
 										<Grid item xs={12} md={6}>
@@ -72,7 +98,12 @@ const Blog = () => {
 																	<Typography
 																		sx={{ fontSize: "18px", color: "#737373" }}
 																	>
-																		{article.time}
+																		{numDaysBetween(article.createdAt) == 0 && (
+																			<>Today</>
+																		)}
+																		{numDaysBetween(article.createdAt) != 0 && (
+																			<>{numDaysBetween(article.createdAt)}d ago</>
+																		)}
 																	</Typography>
 																</Grid>
 															</Grid>
@@ -97,7 +128,7 @@ const Blog = () => {
 																textAlign: "center",
 															}}
 														>
-															{article.judul}
+															{article.title}
 														</Typography>
 													</Grid>
 												</Grid>
