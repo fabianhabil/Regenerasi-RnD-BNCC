@@ -6,10 +6,12 @@ import moment from "moment";
 const Blogs = db.define(
 	"blog",
 	{
-		// id: {
-		// 	type: DataTypes.INTEGER,
-		// 	primaryKey: true,
-		// },
+		id: {
+			type: DataTypes.INTEGER,
+			primaryKey: true,
+			unique: true,
+			autoIncrement: true,
+		},
 		author: {
 			type: DataTypes.INTEGER,
 		},
