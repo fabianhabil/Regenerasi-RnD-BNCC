@@ -3,6 +3,7 @@ import { ThemeProvider } from "@mui/material";
 import theme from "../../../src/theme";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Blog from "../../../components/Blog/Edit Blog/EditBlog";
 
 const Edit = () => {
 	const router = useRouter();
@@ -12,7 +13,9 @@ const Edit = () => {
 			<Head>
 				<title>Blogskuy | Edit</title>
 			</Head>
-			<ThemeProvider theme={theme}>{pid}</ThemeProvider>
+			<ThemeProvider theme={theme}>
+				<Blog />
+			</ThemeProvider>
 		</>
 	);
 };

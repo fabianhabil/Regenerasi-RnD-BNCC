@@ -161,7 +161,12 @@ const BlogPost = () => {
 									spacing={3}
 								>
 									<Grid item>
-										<Button className={styles.button}>
+										<Button
+											className={styles.button}
+											onClick={() => {
+												router.push(`/blog/${pid}/edit`);
+											}}
+										>
 											<Typography>Edit</Typography>
 										</Button>
 									</Grid>
