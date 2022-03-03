@@ -47,3 +47,36 @@ export const getBlog = async (req, res) => {
 		res.status(400).send(err);
 	}
 };
+
+export const deleteBlog = async (req, res) => {
+	try {
+		await Blogs.destroy({
+			where: {
+				id: req.params.id,
+			},
+		});
+		res.status(200).json({
+			status: "success",
+			message: "Successfully deleted a blog",
+		});
+	} catch (err) {
+		res.status(400).send(err);
+	}
+};
+
+export const editBlog = async (req, res) => {
+	try {
+		await Blogs.update(req.body, {
+			where: {
+				id: req.params.id,
+			},
+		});
+		res.status(200).json({
+			status: "success",
+			message: "Successfully edited a blog",
+		});
+	} catch (err) {
+		res.status(400).send(err);
+		console.log(err);
+	}
+};
