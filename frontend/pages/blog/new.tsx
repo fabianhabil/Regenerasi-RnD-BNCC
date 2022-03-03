@@ -1,14 +1,14 @@
 import Layout from "../../components/Layout/Layout";
-import { ThemeProvider, Grid, Typography } from "@mui/material";
+import Blog from "../../components/Blog/New Blog/NewBlog";
+import { ThemeProvider } from "@mui/material";
 import theme from "../../src/theme";
 import Head from "next/head";
-import Blog from "../../components/Blog/All Blog/AllBlog";
 
-const Index = () => {
+const NewBlog = () => {
 	return (
 		<>
 			<Head>
-				<title>Blogskuy | Blog</title>
+				<title>Blogskuy | New Blog</title>
 			</Head>
 			<ThemeProvider theme={theme}>
 				<Blog />
@@ -17,8 +17,8 @@ const Index = () => {
 	);
 };
 
-Index.getLayout = function getLayout(page: any) {
+NewBlog.getLayout = function getLayout(page: any) {
 	return <Layout>{page}</Layout>;
 };
 
-export default Index;
+export default NewBlog;

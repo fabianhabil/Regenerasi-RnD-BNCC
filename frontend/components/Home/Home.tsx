@@ -1,6 +1,7 @@
 import { ThemeProvider, Grid, Hidden, Typography } from "@mui/material";
 import theme from "../../src/theme";
 import { useStyles } from "./HomeStyles";
+import Image from "next/image";
 
 const Landing = () => {
 	const styles = useStyles();
@@ -50,8 +51,13 @@ const Landing = () => {
 								justifyContent="flex-start"
 								alignItems="flex-start"
 							>
-								<Grid item>
-									<img src="saly.png" />
+								<Grid item sx={{ minWidth: "90%" }}>
+									<Image
+										src="/SALY.png"
+										width={0}
+										height={0}
+										layout="responsive" // width={200}
+									/>
 								</Grid>
 							</Grid>
 						</Grid>
