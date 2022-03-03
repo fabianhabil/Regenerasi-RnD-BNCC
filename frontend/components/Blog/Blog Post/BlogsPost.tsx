@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import BerhasilPop from "../../Popup/BerhasilPop";
 import GagalPop from "../../Popup/GagalPop";
+import Swal from "sweetalert2";
 
 const BlogPost = () => {
 	const styles = useStyles();
@@ -51,6 +52,40 @@ const BlogPost = () => {
 				const Gagal = "Blogs gagal dihapus! Silahkan coba lagi!";
 				GagalPop(Gagal);
 				console.log(err);
+			});
+	};
+
+	const deletePop = () => {
+		const swalWithBootstrapButtons = Swal.mixin({
+			customClass: {
+				confirmButton: "btn btn-success",
+			},
+		});
+
+		swalWithBootstrapButtons
+			.fire({
+				title: "Anda Yakin?",
+				text: "Blog yang dihapus tidak bisa kembali lagi!",
+				icon: "warning",
+				iconColor: "Red",
+				showCancelButton: true,
+				confirmButtonText: "Delete Blog",
+				confirmButtonColor: "Red",
+				cancelButtonText: "Cancel",
+				reverseButtons: true,
+			})
+			.then((result) => {
+				if (result.isConfirmed) {
+					deleteBlogs();
+					swalWithBootstrapButtons.fire({
+						title: "Deleted",
+						text: "Blog berhasil dihapus!",
+						icon: "success",
+						iconColor: "Green",
+						confirmButtonText: "OK",
+						confirmButtonColor: "Green",
+					});
+				}
 			});
 	};
 
@@ -131,7 +166,7 @@ const BlogPost = () => {
 										</Button>
 									</Grid>
 									<Grid item>
-										<Button className={styles.button} onClick={deleteBlogs}>
+										<Button className={styles.button} onClick={deletePop}>
 											<Typography>Delete</Typography>
 										</Button>
 									</Grid>

@@ -149,13 +149,13 @@ const Blog = () => {
 																marginTop: 2,
 															}}
 														>
-															{article.content.length > 100 && (
+															{article.description.length > 100 && (
 																<>
-																	{article.content.substring(0, 100) + " ....."}
+																	{article.description.substring(0, 100) + " ....."}
 																</>
 															)}
-															{article.content.length < 100 && (
-																<>{article.content}</>
+															{article.description.length < 100 && (
+																<>{article.description}</>
 															)}
 														</Typography>
 													</Grid>
